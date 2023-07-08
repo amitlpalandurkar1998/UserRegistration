@@ -57,10 +57,30 @@ public class UserRegistration {
 
         Matcher matcher = pattern.matcher(phoneNumber);
         if (matcher.matches()){
-            System.out.println("Phone Number ID Is Valid.\n");
+            System.out.println("Phone Number Is Valid.\n");
+            getUserPassword();
         }else {
             System.out.println("Phone Number Is InValid.");
             getUserPhoneNumber();
         }
     }
+    void getUserPassword(){
+        Pattern pattern = Pattern.compile("[a-zA-Z]{8,}");
+        System.out.println("Follow the format (Minimum 8 characters)");
+        System.out.print("Enter the Password : ");
+        String password = scanner.nextLine();
+
+        Matcher matcher = pattern.matcher(password);
+        if (matcher.matches()){
+            System.out.println("Password Is Valid.\n");
+            exit();
+        }else {
+            System.out.println("Password Is InValid.");
+            getUserPassword();
+        }
+    }
+    void exit(){
+        System.out.println("Thank you......");
+    }
+
 }
