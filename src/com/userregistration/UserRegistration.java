@@ -65,7 +65,7 @@ public class UserRegistration {
         }
     }
     void getUserPassword(){
-        Pattern pattern = Pattern.compile("^(?=.*[A-Z]).{8,}$");
+        Pattern pattern = Pattern.compile("^(?=.*[A-Z])(?=.*[0-9]).{8,}$");
         System.out.println("Follow the format (Minimum 8 characters)");
         System.out.print("Enter the Password : ");
         String password = scanner.nextLine();
