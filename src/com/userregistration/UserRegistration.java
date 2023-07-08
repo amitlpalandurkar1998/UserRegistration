@@ -43,9 +43,24 @@ public class UserRegistration {
         Matcher matcher = pattern.matcher(emailID);
         if (matcher.matches()){
             System.out.print("Email ID Is Valid.\n");
+            getUserPhoneNumber();
         }else {
             System.out.println("Email ID Is InValid.");
             getUserEmailID();
+        }
+    }
+    void getUserPhoneNumber(){
+        Pattern pattern = Pattern.compile("91{1}[6-9]{1}\\d{9}");
+        System.out.println("Follow the format (91XXXXXXXXXX)");
+        System.out.print("Enter The Phone Number : ");
+        String phoneNumber = scanner.nextLine();
+
+        Matcher matcher = pattern.matcher(phoneNumber);
+        if (matcher.matches()){
+            System.out.println("Phone Number ID Is Valid.\n");
+        }else {
+            System.out.println("Phone Number Is InValid.");
+            getUserPhoneNumber();
         }
     }
 }
