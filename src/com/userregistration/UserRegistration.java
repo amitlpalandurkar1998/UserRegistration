@@ -8,7 +8,7 @@ public class UserRegistration {
     Scanner scanner = new Scanner(System.in);
     void getUserFirstName(){
         Pattern pattern = Pattern.compile("[A-Z]+[a-zA-Z]{2,}[0-9]*$");
-        System.out.println("Enter The First Name : ");
+        System.out.print("Enter The First Name : ");
         String firstName = scanner.nextLine();
 
         Matcher matcher = pattern.matcher(firstName);
@@ -65,7 +65,7 @@ public class UserRegistration {
         }
     }
     void getUserPassword(){
-        Pattern pattern = Pattern.compile("[a-zA-Z]{8,}");
+        Pattern pattern = Pattern.compile("^(?=.*[A-Z]).{8,}$");
         System.out.println("Follow the format (Minimum 8 characters)");
         System.out.print("Enter the Password : ");
         String password = scanner.nextLine();
